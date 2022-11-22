@@ -1,2 +1,2 @@
 # celebrity
-Find a celebrity and get their net worth and other information.
+Gets a celebrity's net worth and other information.

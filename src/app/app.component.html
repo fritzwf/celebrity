@@ -1,0 +1,83 @@
+<table id="celebrity-ad" class="center">
+  <tr>
+    <td>
+      <span *ngIf="isMobile">
+        <app-adsense [isMobileDevice]="isMobile"></app-adsense>
+      </span>
+      <div *ngIf="!isMobile">
+        <app-adsense [useTable]="true" [useVerticle]="false"></app-adsense>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<table id="celebrity-get" class="center">
+  <tr>
+    <td>
+      <form>
+        <input type="text" #celebrity placeholder="celebrity name">&nbsp;&nbsp;&nbsp;
+        <span>
+          <button class="button" (click)="getCeleb(celebrity.value)">Net Worth</button>
+        </span>
+      </form>
+    </td>
+  </tr>
+</table>
+
+<br><br>
+<div *ngIf="celebFound">
+  <table id="celebrity-get" class="center mainItemTable">
+    <tr>
+      <th> Name </th>
+      <th> Net Worth </th>
+      <th> Occupation </th>
+      <th> Age </th>
+      <th> Height </th>
+      <th> Nationality </th>
+      <th> Birthday </th>
+      <th> Death </th>
+      <th> Gender </th>
+    </tr>
+    <tr>
+      <td>
+        {{ celeb.name || notFound }}
+      </td>
+      <td>
+        {{ (celeb.net_worth | currency:'USD':'symbol':"1.0-2") || notFound }}
+      </td>
+      <td>
+        {{ celeb.occupation[0] || notFound }}
+      </td>
+      <td>
+        {{ celeb.age || notFound }}
+      </td>
+      <td>
+        {{ (celeb.height | meterToFeet) || notFound}}
+      </td>
+      <td>
+        {{ celeb.nationality || notFound }}
+      </td>
+      <td>
+        {{ celeb.birthday || notFound }}
+      </td>
+      <td>
+        {{ celeb.death || notFound }}
+      </td>
+      <td>
+        {{ celeb.gender || notFound }}
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div [hidden]="!celebNotFound">
+  <table id="celebrity-Not-Found" class="center">
+    <tr>
+      <td>
+        Net Worth Not Found
+      </td>
+    </tr>
+    <tr>
+    </tr>
+  </table>
+</div>
