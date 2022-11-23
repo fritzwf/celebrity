@@ -132,7 +132,7 @@
     </tr>
   </table>
 </div>
-<table id="celebrity-get" class="center">
+<table *ngIf="!isMobile" id="celebrity-get" class="center">
   <tr>
     <td>
       <app-adsense [isMobileDevice]="true"></app-adsense>
