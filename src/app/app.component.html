@@ -17,7 +17,7 @@
   <tr>
     <td>
       <form>
-        <input type="text" #celebrity placeholder="celebrity name">&nbsp;&nbsp;&nbsp;
+        <input type="text" #celebrity placeholder="Enter name">&nbsp;&nbsp;&nbsp;
         <span>
           <button class="button" (click)="getCeleb(celebrity.value)">Net Worth</button>
         </span>
@@ -71,7 +71,7 @@
         </tr>
         </table>
         </div>
-        
+
         <div *ngIf="celebFound && isMobile">
           <table id="celebrity-get" class="center mainItemTable">
             <tr>
@@ -125,7 +125,7 @@
   <table id="celebrity-Not-Found" class="center">
     <tr>
       <td>
-        Net Worth Not Found
+        <h2 class="large">Net worth not found</h2>
       </td>
     </tr>
     <tr>
