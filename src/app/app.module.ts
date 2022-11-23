@@ -1,10 +1,12 @@
 import { AdsenseModule } from 'ng2-adsense';
 import { DeviceDetectorModule } from 'ngx-device-detector';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AdsenseComponent } from './adsense/adsense.component';
 import { AppComponent } from './app.component';
@@ -18,8 +20,10 @@ import { MeterToFeetPipe } from './meter-to-feet.pipe';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    NgxSpinnerModule,
     // shown passing global defaults (optional)
     AdsenseModule.forRoot({
       adClient: 'ca-pub-3352789819896964',

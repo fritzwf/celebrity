@@ -1,4 +1,5 @@
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { Component, OnChanges, OnInit } from '@angular/core';
 
@@ -21,7 +22,8 @@ export class AppComponent implements OnChanges, OnInit {
 
   constructor(
     private deviceService: DeviceDetectorService,
-    private celebrityService: CelebrityService
+    private celebrityService: CelebrityService,
+    private spinner: NgxSpinnerService,
   ) { }
 
   ngOnInit() {
@@ -35,6 +37,7 @@ export class AppComponent implements OnChanges, OnInit {
   }
 
   getCeleb(celebrity: string) {
+    this.spinner.show();
     this.celebrityService.getCelebrity(celebrity).then((result: any) => {
       // console.warn("Celeb: " + JSON.stringify(result));
       this.celebNotFound = false;
@@ -46,8 +49,10 @@ export class AppComponent implements OnChanges, OnInit {
       } else {
         this.celebNotFound = true;
       }
+      this.spinner.hide();
     }).catch((err: any) => {
-      console.error(err);
+      this.spinner.hide();
+      console.error("Net worth retrieval faild.");
     });
   }
 }

@@ -1,3 +1,5 @@
+<ngx-spinner></ngx-spinner>
+
 <table id="celebrity-ad" class="center">
   <tr>
     <td>
@@ -25,7 +27,7 @@
 </table>
 
 <br><br>
-<div *ngIf="celebFound">
+<div *ngIf="celebFound && !isMobile">
   <table id="celebrity-get" class="center mainItemTable">
     <tr>
       <th> Name </th>
@@ -40,13 +42,54 @@
     </tr>
     <tr>
       <td>
+        {{ celeb?.name || notFound }}
+        </td>
+        <td>
+          {{ (celeb?.net_worth | currency:'USD':'symbol':"1.0-2") || notFound }}
+        </td>
+        <td>
+          {{ celeb?.occupation ? celeb.occupation[0] : '' || notFound }}
+        </td>
+        <td>
+          {{ celeb?.age || notFound }}
+        </td>
+        <td>
+          {{ (celeb?.height | meterToFeet) || notFound}}
+        </td>
+        <td>
+          {{ celeb?.nationality || notFound }}
+        </td>
+        <td>
+          {{ celeb?.birthday || notFound }}
+        </td>
+        <td>
+          {{ celeb?.death || notFound }}
+        </td>
+        <td>
+          {{ celeb?.gender || notFound }}
+        </td>
+        </tr>
+        </table>
+        </div>
+        
+        <div *ngIf="celebFound && isMobile">
+          <table id="celebrity-get" class="center mainItemTable">
+            <tr>
+              <th> Name </th>
+              <th> Net Worth </th>
+              <th> Occupation </th>
+              <th> Age </th>
+              <th> Height </th>
+            </tr>
+            <tr class="marginbottom">
+              <td>
         {{ celeb.name || notFound }}
       </td>
       <td>
         {{ (celeb.net_worth | currency:'USD':'symbol':"1.0-2") || notFound }}
       </td>
       <td>
-        {{ celeb.occupation[0] || notFound }}
+        {{ celeb?.occupation ? celeb.occupation[0] : '' || notFound }}
       </td>
       <td>
         {{ celeb.age || notFound }}
@@ -54,6 +97,14 @@
       <td>
         {{ (celeb.height | meterToFeet) || notFound}}
       </td>
+    </tr>
+    <tr>
+      <th> Nationality </th>
+      <th> Birthday </th>
+      <th> Death </th>
+      <th> Gender </th>
+    </tr>
+    <tr>
       <td>
         {{ celeb.nationality || notFound }}
       </td>
