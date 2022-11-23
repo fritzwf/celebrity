@@ -18,7 +18,7 @@ export class AppComponent implements OnChanges, OnInit {
   celebNotFound = false;
   celebrity = "";
   celeb: any;
-  notFound = "N/A";
+  notFound = "n/a";
 
   constructor(
     private deviceService: DeviceDetectorService,
