@@ -1,6 +1,6 @@
 <ngx-spinner></ngx-spinner>
 
-<table id="celebrity-ad" class="center">
+<table class="center">
   <tr>
     <td>
       <span *ngIf="isMobile">
@@ -135,7 +135,7 @@
 <table *ngIf="!isMobile" id="celebrity-get" class="center">
   <tr>
     <td>
-      <app-adsense [isMobileDevice]="true"></app-adsense>
+      <app-adsense [useTable]="true" [isMobileDevice]="true"></app-adsense>
     </td>
   </tr>
 </table>
