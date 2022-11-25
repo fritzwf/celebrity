@@ -51,8 +51,12 @@ export class AppComponent implements OnChanges, OnInit {
       }
       this.spinner.hide();
     }).catch((err: any) => {
-      this.spinner.hide();
       console.error("Net worth retrieval faild.");
     });
+
+    // Timeout if the BE gets held up.
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 15000);
   }
 }
