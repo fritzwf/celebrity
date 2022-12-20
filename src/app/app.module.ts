@@ -11,12 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdsenseComponent } from './adsense/adsense.component';
 import { AppComponent } from './app.component';
 import { MeterToFeetPipe } from './meter-to-feet.pipe';
+import { NetWorthComponent } from './net-worth/net-worth.component';
+import { CarsComponent } from './cars/cars.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdsenseComponent,
-    MeterToFeetPipe
+    MeterToFeetPipe,
+    NetWorthComponent,
+    CarsComponent
   ],
   imports: [
     BrowserModule,

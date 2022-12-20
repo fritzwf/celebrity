@@ -3,14 +3,15 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 import { Component, OnChanges, OnInit } from '@angular/core';
 
-import { NinjaApiService } from './ninja-api.service';
+import { NinjaApiService } from '../ninja-api.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-net-worth',
+  templateUrl: './net-worth.component.html',
+  styleUrls: ['./net-worth.component.scss']
 })
-export class AppComponent implements OnChanges, OnInit {
+export class NetWorthComponent implements OnChanges, OnInit {
+
   title = 'celebrity';
 
   isMobile = false;

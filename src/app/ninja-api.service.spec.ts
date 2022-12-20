@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CelebrityService } from './celebrity.service';
+import { CelebrityService } from './ninja-api.service';
 
 describe('CelebrityService', () => {
   let service: CelebrityService;

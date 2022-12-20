@@ -1,2 +1,2 @@
-# celebrity
-Gets a celebrity's net worth and other information.
+# information
+Web app that supplies multiple information.
