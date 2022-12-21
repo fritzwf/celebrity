@@ -12,7 +12,6 @@ import { AdsenseComponent } from './adsense/adsense.component';
 import { AppComponent } from './app.component';
 import { MeterToFeetPipe } from './meter-to-feet.pipe';
 import { NetWorthComponent } from './net-worth/net-worth.component';
-import { CarsComponent } from './cars/cars.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { CarsComponent } from './cars/cars.component';
     AdsenseComponent,
     MeterToFeetPipe,
     NetWorthComponent,
-    CarsComponent
   ],
   imports: [
     BrowserModule,
