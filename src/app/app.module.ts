@@ -3,7 +3,7 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +32,10 @@ import { NetWorthComponent } from './net-worth/net-worth.component';
       adSlot: 2238911066,
     }),
     DeviceDetectorModule.forRoot()
+  ],
+  schemas: [
+    NO_ERRORS_SCHEMA,
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [],
   bootstrap: [AppComponent]

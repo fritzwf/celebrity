@@ -81,7 +81,6 @@
     </tr>
   </table>
 </div>
-
 <div *ngIf="celebFound && isMobile">
   <table id="celebrity-get" class="center mainItemTable">
     <tr>
@@ -108,6 +107,8 @@
         {{ (celeb.height | meterToFeet) || notFound}}
       </td>
     </tr>
+  </table>
+  <table>
     <tr>
       <th> Nationality </th>
       <th> Birthday </th>
